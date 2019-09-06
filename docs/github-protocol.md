@@ -2,8 +2,9 @@
 
 ## Git Branches
 
-- Each branch name will start with "release-v" and then end with the version
-number like 1, 2, 3, etc.
+<!-- TODO: List branch names -->
+
+- All of your changes to a certain page should be made on the branch for that page.
 
 - To clone a specific branch use `git checkout <branch name>`, followed by `git
 pull`
@@ -12,9 +13,6 @@ pull`
 
 - After committing, to push your code to a specific branch use `git push origin
 <branch name>`
-
-|  WARNING: Never push to master in less authorized to do so in code review! |
-| -------------------------------------------------------------------------- |
 
 ## Code Review
 
