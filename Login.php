@@ -1,35 +1,10 @@
 <?php
-  $username = "";
-  $password = "";
-  $message = "";
-
-  if(isset($_POST['username'])) {
-    $username = $_POST['username'];
-
-    if ($username=="") {
-      $message= "<div class='alert alert-danger mt-3 text-center' role='alert'>
-                  Please Input Username
-                </div>";
-    }
-
-  }
-  if(isset($_POST['password'])) {
-    $password = $_POST['password'];
-
-    if ($password=="") {
-      $message= "<div class='alert alert-danger mt-3 text-center' role='alert'>
-                  Please Input Password
-                </div>";
-    }
-
-  }
-
+  $username = filter_input(INPUT_POST, 'username');
+  $password = filter_input(INPUT_POST, 'password');
   if($password && $username){
     Header ("Location:Dashboard.php") ;
   }
-
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -38,25 +13,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="App.css">
     <title>Login</title>
-
-
+    </script>
   </head>
   <body>
     <div class="outer">
       <div class="container">
         <div class="jumbotron">
           <h1 class="text-center">Login</h1>
-          <form name="registrationForm" action="Login.php" method="post" onsubmit="return validateForm()" class="pt-2">
-            <main>
+          <form name="registrationForm" action="Login.php" class="pt-2" method="post">
             <div class="form-group">
-              <input type="text" class="form-control form-control-lg" name="username" placeholder="Username" value="<?php print $username;?>">
+              <input type="text" name="username" class="form-control form-control-lg" placeholder="Username" required>
             </div>
             <div class="form-group">
-              <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" value="<?php print $password;?>">
+              <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required>
             </div>
-            <?php print $message; ?>
-            <button type="submit" class="btn btn-danger">Login</button>
-          </main>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <input type="submit" class="btn btn-danger" value="Login"/>
+              </div>
+            </div>
           </form>
         </div>
       </div>
