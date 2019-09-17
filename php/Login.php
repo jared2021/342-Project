@@ -2,7 +2,7 @@
   $username = filter_input(INPUT_POST, 'username');
   $password = filter_input(INPUT_POST, 'password');
   if($password && $username){
-    Header ("Location:Dashboard.php") ;
+    header ("Location:Dashboard.php") ;
   }
 ?>
 <!doctype html>
@@ -11,9 +11,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="App.css">
+    <link rel="stylesheet" href="../css/Login.css">
     <title>Login</title>
-    </script>
   </head>
   <body>
     <div class="outer">
