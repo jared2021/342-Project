@@ -11,9 +11,9 @@
     <title>Manage Assets</title>
   </head>
   <body>
-    <?php include 'Navbar.php' ?>
+    <?php include './Navbar.php'?>
 
-    <h1>Dashboard</h1>
+    <h1>Manage Assets</h1>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

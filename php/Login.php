@@ -2,7 +2,7 @@
   $username = filter_input(INPUT_POST, 'username');
   $password = filter_input(INPUT_POST, 'password');
   if($password && $username){
-    header ("Location:Dashboard.php") ;
+    header ("Location:../index.php") ;
   }
 ?>
 <!doctype html>
@@ -12,7 +12,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/Login.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Login</title>
+    <script>
+
+    axios.get('./Dashboard.php')
+      .then(function (response) {
+        console.log(response.data);
+
+    });
+</script>
   </head>
   <body>
     <div class="outer">
