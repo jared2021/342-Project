@@ -1,0 +1,32 @@
+div.container {
+    width: 100vw;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div.container .btn-light {
+    font-size: 1.5vw;
+    border: solid 1px lightgray;
+}
+
+div.add-new-assets {
+    width: 100%;
+    padding: 5%;
+    margin-top: 5%;
+    background-color: #eee;
+    text-align: center;
+}
+
+div.add-new-assets * {
+    margin-bottom: 2%;
+}
+
+div.deactivate-assets {
+    /* TODO: Add Deactivate Assets css here if necessary.
+    *  If similarly styled to Add New Assets let @swimauger know
+    */
+    display: none;
+}
