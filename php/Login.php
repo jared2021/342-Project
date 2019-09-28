@@ -11,37 +11,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/Login.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <title>Login</title>
-    <script>
 
-    axios.get('./Dashboard.php')
-      .then(function (response) {
-        console.log(response.data);
+    <style>
+      .jumbotron {
+        width: 100vw;
+      }
 
-    });
-</script>
+      @media only screen and (min-width: 992px) {
+        .jumbotron {
+          width: 50vw;
+        }
+      }
+
+    </style>
   </head>
-  <body>
-    <div class="outer">
-      <div class="container">
-        <div class="jumbotron">
-          <h1 class="text-center">Login</h1>
-          <form name="registrationForm" action="Login.php" class="pt-2" method="post">
-            <div class="form-group">
-              <input type="text" name="username" class="form-control form-control-lg" placeholder="Username" required>
+  <body
+    <div class="container d-flex align-items-center justify-content-center" style="height:100vh; width: 100vw">
+      <div class="jumbotron">
+        <h1 class="text-center">Login</h1>
+        <form name="registrationForm" action="Login.php" class="pt-2" method="post">
+          <div class="form-group">
+            <input type="text" name="username" class="form-control form-control-lg" placeholder="Username" required>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <input type="submit" class="btn btn-danger" value="Login"/>
             </div>
-            <div class="form-group">
-              <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" required>
-            </div>
-            <div class="form-group row">
-              <div class="col-sm-10">
-                <input type="submit" class="btn btn-danger" value="Login"/>
-              </div>
-            </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
 

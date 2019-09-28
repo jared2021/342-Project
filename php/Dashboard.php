@@ -1,3 +1,56 @@
+<?php
+  $saveIndexValue = null;
+  $overDue = false;
+  $shownData;
+
+  $serial = "685MPD2";
+  $type = "Desktop";
+  $first = "Javier";
+  $last = "Barrera";
+  $room = "2124";
+
+  $overDueArray = array(
+    array("685MPD2", "Desktop" ,"Ardrey, Tameka","2124", 10),
+    array("2ZFLDW2", "Desktop" ,"Barrera, Javier","2127", 6),
+    array("2ZFKDW2", "Desktop" ,"Blackmon Sha'Kema","2127", 3),
+    array("2ZFPDW2", "Desktop" ,"Booker, Sharice","2127", 2),
+    array("2ZFNDW2", "Desktop" ,"Brown, Diondria","2127", 1)
+  );
+
+  $assets = array (
+    array("685MPD2", "Desktop" ,"Ardrey, Tameka","2124"),
+    array("2ZFLDW2", "Desktop" ,"Barrera, Javier","2127"),
+    array("2ZFKDW2", "Desktop" ,"Blackmon Sha'Kema","2127"),
+    array("2ZFPDW2", "Desktop" ,"Booker, Sharice","2127"),
+    array("2ZFNDW2", "Desktop" ,"Brown, Diondria","2127"),
+    array("7YBG9N2", "Laptop" ,"Carr, Kari","3108E"),
+    array("89QMLH2", "Laptop" ,"Cassity, Erin","3138"),
+    array("JXZZLH2", "Laptop" ,"Clemons, Ashley ","Mobile"),
+    array("dH3YYRQ2", "Desktop" ,"Coomer, Nickie","3141"),
+    array("7YCG9N2", "Laptop" ,"Cruz, Karina","3143"),
+    array("6TSZS32", "Laptop" ,"Etienne, Les","Mobile"),
+    array("7YBG9N2", "Laptop" ,"Carr, Kari","3108E"),
+    array("89QMLH2", "Laptop" ,"Cassity, Erin","3138"),
+    array("JXZZLH2", "Laptop" ,"Clemons, Ashley ","Mobile"),
+    array("dH3YYRQ2", "Desktop" ,"Coomer, Nickie","3141"),
+    array("7YCG9N2", "Laptop" ,"Cruz, Karina","3143"),
+    array("6TSZS32", "Laptop" ,"Etienne, Les","Mobile")
+  );
+
+  if (isset($_POST['enter'])){
+    $saveIndexValue = $_POST['enter'];
+
+    array_splice($overDueArray, $saveIndexValue, 1);
+  };
+
+  if (isset($_POST['switch'])){
+    $switchOption = $_POST['switch'];
+    if($switchOption === "overDue"){
+      $overDue = true;
+    }
+  };
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,15 +58,216 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../css/Dashboard.css">
     <title>Manage Assets</title>
+    <style>
+      #search-input {
+        width: 10rem;
+      }
+
+      .switch-button {
+        padding-left: 2rem;
+        padding-right: 2rem; 
+      }
+      .table-container {
+        height: 25rem; 
+        overflow-y: scroll;
+      }
+
+      @media only screen and (min-width: 992px) {
+        #search-input {
+          width: 45rem;
+        }
+
+        .switch-button {
+          padding-left: 3rem;
+          padding-right: 3rem; 
+        }
+
+        .table-container {
+          height: 35rem; 
+          overflow-y: scroll;
+        }
+      }
+
+    </style>
   </head>
   <body>
     <?php include 'Navbar.php' ?>
 
-    <h1>Dashboard</h1>
+    <div class="container mt-5" style="height: 100%;">
+      <div class="btn-group mb-3 d-flex flex-row justify-content-center" role="group" aria-label="Basic example">
+        <form action="Dashboard.php" method="post">
+          <button type="submit" class="btn btn-outline-dark switch-button" name='switch' value="all">All Assets</button>
+          <button type="submit" class="btn btn-outline-dark switch-button" name="switch" value="overDue">Overdue Assets</button>
+        </form>
+      </div>
+
+      <div class="input-group pr-4">
+        <input type="text" class="form-control test" placeholder="Search..." id="search-input">
+        <select class="custom-select" id="inputGroupSelect04">
+          <option selected value="serial">Serial</option>
+          <option value="username">Username</option>
+          <option value="room">Room</option>
+          <option value="days">Days Late</option>
+          <option value="days">Type</option>
+        </select>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button">Search</button>
+        </div>
+      </div>
+
+      <div class="table-container mt-3">
+        <table class="table table-sm border mt-2">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" class='text-center'>#</th>
+              <th scope="col" class='text-center'>Serial Number</th>
+              <th scope="col" class='text-center'>Type</th>
+              <th scope="col" class='text-center'>User</th>
+              <th scope="col" class='text-center'>Room</th>
+             
+
+            <?php
+              if($overDue){
+                print " 
+                        <th scope='col' class='text-center'>Days Overdue</th>
+                        <th scope='col' class='text-center'></th>
+                      </tr>
+                    </thead>
+                  <tbody>";
+                foreach ($overDueArray as $arrayKey => $array) {
+                  print "<tr>";
+                  $index = $arrayKey + 1;
+                  print "<td class='text-center table-item'>$index</td>";
+                  foreach($array as $itemKey => $value){
+                    print "<td class='text-center table-item'>$value</td>";
+                  }
+                  print "<td><button type='button' class='btn btn-primary' onclick='saveIndexFunction($arrayKey)' data-toggle='modal' data-target='#overDueModal'>Check In</button></td>";
+                  print "</tr>";
+                }
+              }else {
+                print "
+                        <th scope='col' class='text-center'></th>
+                      </tr>
+                    </thead>
+                  <tbody>";
+                foreach ($assets as $arrayKey => $array) {
+                  print "<tr>";
+                  $index = $arrayKey + 1;
+                  print "<td class='text-center table-item'>$index</td>";
+                  foreach($array as $itemKey => $value){
+                    print "<td class='text-center table-item'>$value</td>";
+                  }
+                  print "<td><button type='button' class='btn btn-primary' onclick='saveIndexFunction($arrayKey)' data-toggle='modal' data-target='#AssetModal'>Edit</button></td>";
+                  print "</tr>";
+                }
+              }
+            ?>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+
+    <!-- OverDue Modal -->
+      <div class="modal fade" id="overDueModal" tabindex="-1" role="dialog" aria-labelledby="overDueModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="overDue-Modal">Check In Asset</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to check in this asset?</p>
+            </div>
+            <div class="modal-footer">
+              <form action="Dashboard.php" method="post">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" id="enterButton" name="enter">Check In</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asset Modal -->
+      <div class="modal fade" id="AssetModal" tabindex="-1" role="dialog" aria-labelledby="AssetModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="overDue-Modal">Edit Asset</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div>
+              <form>
+                <div class="form-group mx-3 mt-3">
+                  <div class="form-row">
+                    <div class="col">
+                      <label>Serial Number</label>
+                      <input type="text" class="form-control" id="serial" placeholder="serial" value="<?php print $serial?>">
+                    </div>
+                    <div class="col">
+                      <label>Device Type</label>
+                      <div class="form-group">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>Category</option>
+                          <option>Camera</option>
+                          <option selected>Desktop</option>
+                          <option>Laptop</option>
+                          <option>Printer</option>
+                          <option>Tablet</option>
+                          <option>Video Conferencing</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row mt-2">
+                    <div class="col">
+                      <label>First Name</label>
+                      <input type="text" class="form-control" id="first" placeholder="User" value="<?php print $first?>">
+                    </div>
+                    <div class="col">
+                      <label>Last Name</label>
+                      <input type="text" class="form-control" id="last" placeholder="Room" value="<?php print $last?>">
+                    </div>
+                  </div>
+                  <div class="form-row mt-2">
+                    <div class="col">
+                      <label class="pb-n3">First Name</label>
+                      <input type="text" class="form-control mt-2" id="room" placeholder="Room" value="<?php print $room?>">
+                    </div>
+                  </div>
+                 
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <form action="Dashboard.php" method="post">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" id="enterButton">Edit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script>
+
+      function saveIndexFunction(index) {
+        saveIndex = index;
+        document.getElementById('enterButton').value = saveIndex;
+      };
+
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
