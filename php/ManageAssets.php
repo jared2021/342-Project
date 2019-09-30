@@ -14,14 +14,14 @@
   <body>
     <?php include './Navbar.php'?>
 
-    <div class="container">
-        <div class="btn-group" role="group" aria-label="Toggle Add/Deactivate Assets">
-          <button type="button" class="btn btn-light" onclick="togglePage(0)">Add New Asset</button>
+    <div class="container cd-flex flex-column justify-content-center text-center">
+        <div class="btn-group rounded mt-5" role="group" aria-label="Toggle Add/Deactivate Assets">
+          <button type="button" class="btn border btn-light shadow-none" onclick="togglePage(0)">Add New Asset</button>
 
-          <button type="button" class="btn btn-light" onclick="togglePage(1)">Deactivate Asset</button>
+          <button type="button" class="btn border btn-light shadow-none" onclick="togglePage(1)">Deactivate Asset</button>
         </div>
 
-        <div class="add-new-assets">
+        <div class="add-new-assets p-5 border bg-light mt-4">
             <h1>Add New Assets(s)</h1>
 
             <h4>Select Device</h4>
@@ -31,7 +31,7 @@
             <select class="form-control" name="">
                 <option value="" selected disabled hidden>Manufacturer</option>
             </select>
-            <select class="form-control" name="">
+            <select class="form-control" name="" disabled>
                 <option value="" selected disabled hidden>Model</option>
             </select>
 
