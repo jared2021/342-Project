@@ -8,16 +8,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul id="nav" class="navbar-nav  ml-auto">
       <li class="nav-item">
-        <a id="dashboard" class="nav-link" href="./Dashboard.php">Dashboard</a>
+        <a id="dashboard" class="nav-link active" href="./Dashboard.php">Dashboard</a>
       </li>
       <li class="nav-item">
-        <a id="manage" class="nav-link" href="./ManageAssets.php">Manage Assets</a>
+        <a id="manage" class="nav-link active" href="./ManageAssets.php">Manage Assets</a>
       </li>
       <li class="nav-item">
-        <a id="settings" class="nav-link" href="./Settings.php">Settings</a>
+        <a id="settings" class="nav-link active" href="./Settings.php">Settings</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./Login.php">Sign Out</a>
+        <a class="nav-link active" href="./Login.php">Sign Out</a>
       </li>
     </ul>
   </div>
