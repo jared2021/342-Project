@@ -60,8 +60,9 @@
 
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/Dashboard.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../css/Dashboard.css"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <title>Assets Dashboard</title>
   </head>
@@ -80,16 +81,6 @@
 
       <div class="input-group pr-4">
         <input type="text" class="form-control test" placeholder="Search..." id="search-input">
-        <select class="custom-select" id="inputGroupSelect04">
-          <option selected value="serial">Serial</option>
-          <option value="username">Username</option>
-          <option value="room">Room</option>
-          <option value="days">Days Late</option>
-          <option value="days">Type</option>
-        </select>
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button">Search</button>
-        </div>
       </div>
 
       <div class="table-container mt-3">
@@ -108,7 +99,8 @@
                         <th scope='col' class='text-center'>Days Overdue</th>
                         <th scope='col' class='text-center'></th>
                       </tr>
-                    </thead>";
+                    </thead>
+                   <tbody id=\"myTable\">";
                 foreach ($overDueArray as $arrayKey => $array) {
                   print "<tr>";
                   $index = $arrayKey + 1;
@@ -123,7 +115,8 @@
                 print "
                         <th scope='col' class='text-center'></th>
                       </tr>
-                    </thead>";
+                    </thead>
+                   <tbody id=\"myTable\">";
                 foreach ($assets as $arrayKey => $array) {
                   print "<tr>";
                   $index = $arrayKey + 1;
