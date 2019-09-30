@@ -14,6 +14,9 @@
         <a id="manage" class="nav-link active" href="./ManageAssets.php">Manage Assets</a>
       </li>
       <li class="nav-item">
+        <a id="settings" class="nav-link active" href="./Analytics.php">Analytics</a>
+      </li>
+      <li class="nav-item">
         <a id="settings" class="nav-link active" href="./Settings.php">Settings</a>
       </li>
       <li class="nav-item">
