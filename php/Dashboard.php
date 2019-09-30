@@ -69,15 +69,12 @@
     <?php include 'Navbar.php' ?>
 
     <div class="container mt-5" style="height: 100%;">
-
-      <div class="btn-group mb-3 d-flex flex-row justify-content-center" role="group">
-        <button type="button" class="btn btn-light border" onclick="togglePage(0)" name='switch' value="all">Add Assets</button>
-        <button type="button" class="btn btn-light border" onclick="togglePage(1)" name='switch' value="overDue">Overdue Assets</button>
-      </div>
       <div class="btn-group mb-3 d-flex flex-row justify-content-center" role="group" >
         <form action="Dashboard.php" method="post">
-          <button type="submit" class="btn btn-outline-dark switch-button" name='switch' value="all">All Assets</button>
-          <button type="submit" class="btn btn-outline-dark switch-button" name="switch" value="overDue">Overdue Assets</button>
+          <div class="input-group-prepend" id="button-addon3">
+            <button type="submit" class="btn btn-light switch-button border" name='switch' value="all">All Assets</button>
+            <button type="submit" class="btn btn-light switch-button border" name="switch" value="overDue">Overdue Assets</button>
+          </div>
         </form>
       </div>
 
