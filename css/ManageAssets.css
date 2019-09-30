@@ -1,0 +1,10 @@
+div.add-new-assets * {
+    margin-bottom: 2%;
+}
+
+div.deactivate-assets {
+    /* TODO: Add Deactivate Assets css here if necessary.
+    *  If similarly styled to Add New Assets let @swimauger know
+    */
+    display: none;
+}
