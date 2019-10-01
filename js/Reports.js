@@ -1,8 +1,6 @@
 $(document).ready(function() {
-
-    $("manufacturerGraph").hide();
-    $("modelGraph").hide();
-
+    $("#manufacturerGraph").hide();
+    $("#modelGraph").hide();
     let devices = new CanvasJS.Chart("deviceGraph", {
         animationEnabled: true,
         title: {
@@ -25,7 +23,7 @@ $(document).ready(function() {
             type: "pie",
             yValueFormatString: "#,##0",
             indexLabel: "{label} ({y})",
-            dataPoints: deviceData
+            dataPoints: manufacturerData
         }]
     });
 
@@ -43,23 +41,23 @@ $(document).ready(function() {
     });
 
     $("#deviceButton").click(function(){
-        $("#deviceGraph").show();
         $("#manufacturerGraph").hide();
         $("#modelGraph").hide();
+        $("#deviceGraph").show();
 
     });
 
     $("#manufacturerButton").click(function(){
-        $("#manufacturerGraph").show();
         $("#deviceGraph").hide();
         $("#modelGraph").hide();
+        $("#manufacturerGraph").show();
 
     });
 
     $("#modelButton").click(function(){
-        $("#modelGraph").show();
         $("#manufacturerGraph").hide();
         $("#deviceGraph").hide();
+        $("#modelGraph").show();
 
     });
 

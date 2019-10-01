@@ -67,10 +67,13 @@ $manufacturers = array(
         <button class="btn btn-light border">On</button>
       </div>
       <div class="d-flex flex-row justify-content-center text-center graph-container">
-        <div id="deviceGraph" style="height: 370px; width: 100%;"></div>
-        <div id="manufacturerGraph" style="height: 370px; width: 100%;"></div>
-        <div id="modelGraph" style="height: 370px; width: 100%;"></div>
+        <div id="deviceGraph" style="height: 370px; width: 50%;"></div>
+        <div id="manufacturerGraph" style="height: 370px; width: 50%;"></div>
+        <div id="modelGraph" style="height: 370px; width: 50%;"></div>
       </div>
+        <div class="text-center">
+            <button class="btn btn-light border ">Export</button>
+        </div>
     </div>
     <div class="d-flex align-items-center justify-content-center div-containers">
       <h1>Test</h1>
