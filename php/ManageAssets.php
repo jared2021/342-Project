@@ -1,3 +1,26 @@
+<?php
+    $assets = array (
+      array("685MPD2", "Desktop" ,"Ardrey, Tameka","2124"),
+      array("2ZFLDW2", "Desktop" ,"Barrera, Javier","2127"),
+      array("2ZFKDW2", "Desktop" ,"Blackmon Sha'Kema","2127"),
+      array("2ZFPDW2", "Desktop" ,"Booker, Sharice","2127"),
+      array("2ZFNDW2", "Desktop" ,"Brown, Diondria","2127"),
+      array("7YBG9N2", "Laptop" ,"Carr, Kari","3108E"),
+      array("89QMLH2", "Laptop" ,"Cassity, Erin","3138"),
+      array("JXZZLH2", "Laptop" ,"Clemons, Ashley ","Mobile"),
+      array("dH3YYRQ2", "Desktop" ,"Coomer, Nickie","3141"),
+      array("7YCG9N2", "Laptop" ,"Cruz, Karina","3143"),
+      array("6TSZS32", "Laptop" ,"Etienne, Les","Mobile"),
+      array("7YBG9N2", "Laptop" ,"Carr, Kari","3108E"),
+      array("89QMLH2", "Laptop" ,"Cassity, Erin","3138"),
+      array("JXZZLH2", "Laptop" ,"Clemons, Ashley ","Mobile"),
+      array("dH3YYRQ2", "Desktop" ,"Coomer, Nickie","3141"),
+      array("7YCG9N2", "Laptop" ,"Cruz, Karina","3143"),
+      array("6TSZS32", "Laptop" ,"Etienne, Les","Mobile")
+    );
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -40,16 +63,50 @@
             <button type="button" class="btn btn-success">Add Asset</button>
         </div>
 
-        <div class="deactivate-assets">
-	   <h1>Deactivate Asset(s) </h1>
-		<input type="text" class="form-control" name="" placeholder="Search">
-		<select name="Search">
-		  <option value="serial">Serial</option>
-		  <option value="username">Username</option>
-		  <option value="room">Room</option>
-		  <option value="days_Late">Days Late</option>
-		  <option value="type">Type</option>
-		</select>
+        <div class="deactivate-assets mt-4">
+            <div class="container bg-light border">
+               <h1 class="pt-3">Deactivate Asset(s) </h1>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search..." id="search-input">
+                    <select class="custom-select" id="inputGroupSelect04">
+                        <option selected value="serial">Serial</option>
+                        <option value="username">Username</option>
+                        <option value="room">Room</option>
+                        <option value="days">Days Late</option>
+                        <option value="days">Type</option>
+                    </select>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Search</button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="table table-sm border mt-3">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col" class='text-center'>#</th>
+                                <th scope="col" class='text-center'>Serial Number</th>
+                                <th scope="col" class='text-center'>Type</th>
+                                <th scope="col" class='text-center'>User</th>
+                                <th scope="col" class='text-center'>Room</th>
+                                <th scope='col' class='text-center'></th>
+                            </tr>
+                        </thead>
+
+                        <?php
+                            foreach ($assets as $arrayKey => $array) {
+                              print "<tr>";
+                              $index = $arrayKey + 1;
+                              print "<td class='text-center table-item'>$index</td>";
+                              foreach($array as $itemKey => $value){
+                                print "<td class='text-center table-item'>$value</td>";
+                              }
+                              print "<td><button type='button' class='btn btn-primary' onclick='saveIndexFunction($arrayKey)' data-toggle='modal' data-target='#AssetModal'>Deactive</button></td>";
+                              print "</tr>";
+                            }
+                        ?>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 

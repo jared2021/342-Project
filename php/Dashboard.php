@@ -78,8 +78,8 @@
         </form>
       </div>
 
-      <div class="input-group pr-4">
-        <input type="text" class="form-control test" placeholder="Search..." id="search-input">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search..." id="search-input">
         <select class="custom-select" id="inputGroupSelect04">
           <option selected value="serial">Serial</option>
           <option value="username">Username</option>
