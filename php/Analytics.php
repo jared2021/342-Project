@@ -1,5 +1,5 @@
 <?php
-include "calendar.php"
+include "calendar.php";
 $devices = array(
   array("label"=>"Desktop", "y"=>8),
   array("label"=>"Laptop", "y"=>7),
@@ -77,12 +77,11 @@ $manufacturers = array(
       </div>
 
       <div class="d-flex justify-content-center div-containers">
-	  <h1>Calendar</h1>
-	<?php
-		$calendar = new Calendar();
+        <?php
+            $calendar = new Calendar();
 
-		echo $calendar->show();
-	?>
+            echo $calendar->show();
+        ?>
       </div>
   </div>
   
