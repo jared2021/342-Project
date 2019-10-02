@@ -41,7 +41,15 @@
         </div>
 
         <div class="deactivate-assets">
-            <!-- TODO: Add Deactivate Assets menu here -->
+	   <h1>Deactivate Asset(s) </h1>
+		<input type="text" class="form-control" name="" placeholder="Search">
+		<select name="Search">
+		  <option value="serial">Serial</option>
+		  <option value="username">Username</option>
+		  <option value="room">Room</option>
+		  <option value="days_Late">Days Late</option>
+		  <option value="type">Type</option>
+		</select>
         </div>
     </div>
 
