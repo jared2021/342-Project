@@ -41,8 +41,7 @@ $manufacturers = array(
       let manufacturerData = <?php echo json_encode($manufacturers, JSON_NUMERIC_CHECK); ?>;
     </script>
     
-    <script src="../js/Reports.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/AnalyticsPage.js"></script>
 
     <link rel="stylesheet" href="../css/Analytics.css">
     <title>Analytics</title>
@@ -50,34 +49,35 @@ $manufacturers = array(
   </head>
   <body>
   <?php include './Navbar.php'?>
-  
-  <div class="d-flex align-items-center analytics-container">
-    <div class="border-right div-containers">
-      <div class="mt-4 mb-3 text-center">
-        <button class="btn btn-light border" id="deviceButton">Devices</button>
-        <button class="btn btn-light border" id="manufacturerButton">Manufacturers</button>
-        <button class="btn btn-light border" id="modelButton">Models</button>
+
+  <div class="d-flex align-items-center">
+      <div class="div-containers">
+          <div class="mt-4 mb-3 text-center">
+              <button class="btn btn-light border" id="deviceButton">Devices</button>
+              <button class="btn btn-light border" id="manufacturerButton">Manufacturers</button>
+              <button class="btn btn-light border" id="modelButton">Models</button>
+          </div>
+          <div class="mb-5 text-center d-flex flex-row justify-content-center align-items-center">
+              <h5>Surplus:</h5>
+              <button class="btn btn-light border mx-3">Off</button>
+              <button class="btn btn-light border">On</button>
+              <h5 class="ml-4">Expired Warranty:</h5>
+              <button class="btn btn-light border mx-3">Off</button>
+              <button class="btn btn-light border">On</button>
+          </div>
+
+          <div class="d-flex flex-row justify-content-center text-center graph-container">
+              <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+          </div>
+
+          <div class="text-center mt-5">
+              <button class="btn btn-light border">Export</button>
+          </div>
       </div>
-      <div class="mb-5 text-center d-flex flex-row justify-content-center align-items-center">
-        <h5>Surplus:</h5>
-        <button class="btn btn-light border mx-3">Off</button>
-        <button class="btn btn-light border">On</button>
-        <h5 class="ml-4">Expired Warranty:</h5>
-        <button class="btn btn-light border mx-3">Off</button>
-        <button class="btn btn-light border">On</button>
+
+      <div class="d-flex justify-content-center div-containers">
+          <h1>Calendar</h1>
       </div>
-      <div class="d-flex flex-row justify-content-center text-center graph-container">
-        <div id="deviceGraph" style="height: 370px; width: 50%;"></div>
-        <div id="manufacturerGraph" style="height: 370px; width: 50%;"></div>
-        <div id="modelGraph" style="height: 370px; width: 50%;"></div>
-      </div>
-        <div class="text-center">
-            <button class="btn btn-light border ">Export</button>
-        </div>
-    </div>
-    <div class="d-flex align-items-center justify-content-center div-containers">
-      <h1>Test</h1>
-    </div>
   </div>
   
   
@@ -87,5 +87,6 @@ $manufacturers = array(
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
   </body>
 </html>
