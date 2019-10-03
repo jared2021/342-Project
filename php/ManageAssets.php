@@ -163,11 +163,32 @@
                               foreach($array as $itemKey => $value){
                                 print "<td class='text-center table-item'>$value</td>";
                               }
-                              print "<td><button type='button' class='btn btn-primary' onclick='saveIndexFunction($arrayKey)' data-toggle='modal' data-target='#AssetModal'>Deactive</button></td>";
+                              print "<td><button type='button' class='btn btn-primary' onclick='saveIndexFunction($arrayKey)' data-toggle='modal' data-target='#deactivateAsset'>Deactivate</button></td>";
                               print "</tr>";
                             }
                         ?>
                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OverDue Modal -->
+    <div class="modal fade" id="deactivateAsset" tabindex="-1" role="dialog" aria-labelledby="overDueModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="overDue-Modal">Check In Asset</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to deactivate this asset?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="enterButton" name="enter">Deactivate</button>
                 </div>
             </div>
         </div>
