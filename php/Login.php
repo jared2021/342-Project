@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../css/Login.css">
     <title>Login</title>
   </head>
-  <body
+  <body>
     <div class="container d-flex align-items-center justify-content-center" style="height:100vh; width: 100vw">
       <div class="jumbotron">
         <h1 class="text-center">Login</h1>
