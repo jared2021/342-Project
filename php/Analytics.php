@@ -1,5 +1,5 @@
 <?php
-include "calendar.php";
+include "./Calendar.php";
 $devices = array(
   array("label"=>"Desktop", "y"=>8),
   array("label"=>"Laptop", "y"=>7),

@@ -118,19 +118,19 @@
                         <div class="form-group mx-3 mt-3">
                             <div>
                                 <label>Old Password</label>
-                                <input type="text" class="form-control" id="serial" value="<?php print $serial?>">
+                                <input type="text" class="form-control" id="oldPassword">
                             </div>
                             <div class="mt-3">
                                 <label>Confirm Old Password</label>
-                                <input type="text" class="form-control" id="serial"  value="<?php print $serial?>">
+                                <input type="text" class="form-control" id="confirmOldPassword" >
                             </div>
                             <div class="mt-3">
                                 <label>New Password</label>
-                                <input type="text" class="form-control" id="serial" value="<?php print $serial?>">
+                                <input type="text" class="form-control" id="newPassword">
                             </div>
                             <div class="mt-3">
                                 <label>Confirm New Password</label>
-                                <input type="text" class="form-control" id="serial" value="<?php print $serial?>">
+                                <input type="text" class="form-control" id="confirmNewPassword">
                             </div>
                         </div>
                     </form>
