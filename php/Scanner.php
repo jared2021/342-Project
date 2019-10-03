@@ -16,6 +16,17 @@
         <div class="controls">
             <button class="scan btn btn-success" type="button" name="button" data-toggle="modal" data-target="#AssetModal">Scan Asset</button>
         </div>
+        <div class="container w-100 cd-flex flex-column justify-content-center ">
+            <div class="alert alert-warning text-center m-5 rounded">
+                <h2>We can't find your camera</h2>
+                <hr>
+                <h4>
+                    Check to make sure it is connected and installed properly and
+                    that it isn't being blocked by anti-virus software, and that
+                    your camera drivers are up to date.
+                </h4>
+            </div>
+        </div>
 
         <div class="modal fade" id="AssetModal" tabindex="-1" role="dialog" aria-labelledby="AssetModal" aria-hidden="true">
           <div class="modal-dialog" role="document">
