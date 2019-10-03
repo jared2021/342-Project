@@ -1,0 +1,18 @@
+.graphItems-container {
+    width: 100%
+}
+
+.graph {
+    height: 370px;
+    width: 100%;
+}
+
+.graph-container {
+    width: 50vw;
+    height: 100%;
+}
+
+.div-containers {
+    width: 50vw;
+    height: 100%;
+}
