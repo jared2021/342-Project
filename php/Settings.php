@@ -118,19 +118,19 @@
                         <div class="form-group mx-3 mt-3">
                             <div>
                                 <label>Old Password</label>
-                                <input type="text" class="form-control" id="oldPassword">
+                                <input type="text" class="form-control" id="serial">
                             </div>
                             <div class="mt-3">
                                 <label>Confirm Old Password</label>
-                                <input type="text" class="form-control" id="confirmOldPassword" >
+                                <input type="text" class="form-control" id="serial">
                             </div>
                             <div class="mt-3">
                                 <label>New Password</label>
-                                <input type="text" class="form-control" id="newPassword">
+                                <input type="text" class="form-control" id="serial">
                             </div>
                             <div class="mt-3">
                                 <label>Confirm New Password</label>
-                                <input type="text" class="form-control" id="confirmNewPassword">
+                                <input type="text" class="form-control" id="serial">
                             </div>
                         </div>
                     </form>

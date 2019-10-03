@@ -182,7 +182,7 @@
                   <div class="form-row">
                     <div class="col">
                       <label>Serial Number</label>
-                      <input type="text" class="form-control" id="serial" placeholder="serial" value="<?php print $serial?>">
+                      <input type="text" class="form-control" id="serial" placeholder="Serial" value="<?php print $serial?>">
                     </div>
                     <div class="col">
                       <label>Device Type</label>
@@ -211,7 +211,7 @@
                   </div>
                   <div class="form-row mt-2">
                     <div class="col">
-                      <label class="pb-n3">First Name</label>
+                      <label class="pb-n3">Room</label>
                       <input type="text" class="form-control mt-2" id="room" placeholder="Room" value="<?php print $room?>">
                     </div>
                   </div>

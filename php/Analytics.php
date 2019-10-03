@@ -31,20 +31,14 @@ $manufacturers = array(
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="../css/calendar.css" type="text/css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
-    <script>
-      let deviceData = <?php echo json_encode($devices, JSON_NUMERIC_CHECK); ?>;
-      let manufacturerData = <?php echo json_encode($manufacturers, JSON_NUMERIC_CHECK); ?>;
-    </script>
-    
-    <script src="../js/AnalyticsPage.js"></script>
+
 
     <link rel="stylesheet" href="../css/Analytics.css">
+    <link href="../css/Calendar.css" type="text/css" rel="stylesheet"/>
     <title>Analytics</title>
 
   </head>
@@ -84,8 +78,31 @@ $manufacturers = array(
         ?>
       </div>
   </div>
-  
-  
+
+  <script>
+    let deviceData = [
+      {label: "Desktop", y: 8},
+      {label: "Laptop", y: 8},
+      {label: "Camera", y: 7},
+      {label: "Printer", y: 3},
+      {label: "Tablet", y: 5},
+      {label: "Video Conf.", y: 10}
+    ]
+
+    let manufacturerData = [
+      {label: "Apple", y: 10},
+      {label: "Canon", y: 5},
+      {label: "Cisco", y: 8},
+      {label: "Dell", y: 0},
+      {label: "HP", y: 2},
+      {label: "Logitech", y: 5},
+      {label: "Samsung", y: 20},
+      {label: "Lenovo", y: 7},
+      {label: "Microsoft", y: 2},
+      {label: "Ricoh", y: 0}
+    ]
+
+  </script>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -93,5 +110,6 @@ $manufacturers = array(
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
+  <script src="../js/AnalyticsPage.js"></script>
   </body>
 </html>

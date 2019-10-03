@@ -32,7 +32,7 @@
                     <div class="form-row">
                       <div class="col">
                         <label>Serial Number</label>
-                        <input type="text" class="form-control" id="serial" placeholder="serial" value="<?php print $serial?>">
+                        <input type="text" class="form-control" id="serial" placeholder="Serial">
                       </div>
                       <div class="col">
                         <label>Device Type</label>
@@ -40,7 +40,7 @@
                           <select class="form-control" id="exampleFormControlSelect1">
                             <option>Category</option>
                             <option>Camera</option>
-                            <option selected>Desktop</option>
+                            <option>Desktop</option>
                             <option>Laptop</option>
                             <option>Printer</option>
                             <option>Tablet</option>
@@ -52,17 +52,17 @@
                     <div class="form-row mt-2">
                       <div class="col">
                         <label>First Name</label>
-                        <input type="text" class="form-control" id="first" placeholder="User" value="<?php print $first?>">
+                        <input type="text" class="form-control" id="first" placeholder="User">
                       </div>
                       <div class="col">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" id="last" placeholder="Room" value="<?php print $last?>">
+                        <input type="text" class="form-control" id="last" placeholder="Room">
                       </div>
                     </div>
                     <div class="form-row mt-2">
                       <div class="col">
-                        <label class="pb-n3">First Name</label>
-                        <input type="text" class="form-control mt-2" id="room" placeholder="Room" value="<?php print $room?>">
+                        <label class="pb-n3">Room</label>
+                        <input type="text" class="form-control mt-2" id="room" placeholder="Room">
                       </div>
                     </div>
 
