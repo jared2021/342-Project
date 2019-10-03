@@ -45,28 +45,34 @@
         </div>
 
         <div class="add-new-assets p-5 border bg-light mt-4">
-            <h1>Add New Assets(s)</h1>
+            <h1>Add New Asset(s)</h1>
 
-            <h4>Select Device</h4>
-            <select class="form-control" name="">
-                <option value="" selected disabled hidden>Category</option>
-                <option value="">Desktop</option>
-                <option value="">Laptop</option>
-                <option value="">Tablet</option>
-                <option value="">Printer</option>
-                <option value="">Video Conferencing</option>
-            </select>
-            <select class="form-control" name="">
-                <option value="" selected disabled hidden>Manufacturer</option>
-                <option value="">Apple</option>
-                <option value="">Dell</option>
-                <option value="">HP</option>
-                <option value="">Canon</option>
-                <option value="">Tandberg</option>
-                <option value="">Logitech</option>
-            </select>
-            <select class="form-control" name="" disabled>
-                <option value="" selected disabled hidden>Model</option>
+            <div class="form-row">
+                <div class="col">
+                    <select class="form-control" name="">
+                        <option value="" selected disabled hidden>Category</option>
+                        <option value="">Desktop</option>
+                        <option value="">Laptop</option>
+                        <option value="">Tablet</option>
+                        <option value="">Printer</option>
+                        <option value="">Video Conferencing</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="form-control" name="">
+                        <option value="" selected disabled hidden>Manufacturer</option>
+                        <option value="">Apple</option>
+                        <option value="">Dell</option>
+                        <option value="">HP</option>
+                        <option value="">Canon</option>
+                        <option value="">Tandberg</option>
+                        <option value="">Logitech</option>
+                    </select>
+                </div>
+            </div>
+
+            <select class="form-control mt-n3" name="">
+                <option value="">Model</option>
                 <option value="">Optiplex 5040</option>
                 <option value="">Optiplex 5050</option>
                 <option value="">Optiplex 7020</option>
@@ -79,9 +85,45 @@
                 <option value="">MacBook</option>
             </select>
 
-            <h4>Input Serial Number</h4>
-            <input type="text" class="form-control" name="" placeholder="Serial Number">
+            <div class="form-row pt-3">
+                <div class="col">
+                    <input type="text" class="form-control" name="" placeholder="Serial Number">
+                </div>
+                <div class="col">
+                    <select class="form-control" name="">
+                        <option value="">User</option>
+                        <option value="">Ardrey, Tameka</option>
+                        <option value="">Barrera, Javier</option>
+                        <option value="">Blackmon Sha'Kema</option>
+                        <option value="">Booker, Sharice</option>
+                        <option value="">Brown, Diondria</option>
+                        <option value="">Carr, Kari</option>
+                        <option value="">Cassity, Erin</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row mt-n3">
+                <div class="col">
+                    <select class="form-control" name="">
+                        <option value="">Building</option>
+                        <option value="">ES</option>
+                        <option value="">IT</option>
+                        <option value="">ED</option>
+                        <option value="">LE</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" name="" placeholder="Room Number">
+                </div>
+                <div class="col">
+                    <input type="date" id="datepicker" class="form-control" placeholder="Date">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control"placeholder="Warranty">
+                </div>
+            </div>
             <button type="button" class="btn btn-success">Add Asset</button>
+            <hr/>
         </div>
 
         <div class="deactivate-assets mt-4">
