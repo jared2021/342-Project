@@ -27,12 +27,33 @@
             <h4>Select Device</h4>
             <select class="form-control" name="">
                 <option value="" selected disabled hidden>Category</option>
+                <option value="">Desktop</option>
+                <option value="">Laptop</option>
+                <option value="">Tablet</option>
+                <option value="">Printer</option>
+                <option value="">Video Conferencing</option>
             </select>
             <select class="form-control" name="">
                 <option value="" selected disabled hidden>Manufacturer</option>
+                <option value="">Apple</option>
+                <option value="">Dell</option>
+                <option value="">HP</option>
+                <option value="">Canon</option>
+                <option value="">Tandberg</option>
+                <option value="">Logitech</option>
             </select>
             <select class="form-control" name="" disabled>
                 <option value="" selected disabled hidden>Model</option>
+                <option value="">Optiplex 5040</option>
+                <option value="">Optiplex 5050</option>
+                <option value="">Optiplex 7020</option>
+                <option value="">XPS 13</option>
+                <option value="">Latitude 7450</option>
+                <option value="">Latitude 7250</option>
+                <option value="">iMac</option>
+                <option value="">MacAir</option>
+                <option value="">MacPro</option>
+                <option value="">MacBook</option>
             </select>
 
             <h4>Input Serial Number</h4>
