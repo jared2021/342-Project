@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,7 +16,6 @@
   <body>
     <?php
         include 'Navbar.php';
-        session_start();
 	?>
 
     <div class="container cd-flex flex-column p-5 border bg-light mt-5 w-50">
