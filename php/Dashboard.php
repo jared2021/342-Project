@@ -71,15 +71,15 @@
     <div class="container mt-5" style="height: 100%;">
       <div class="btn-group mb-3 d-flex flex-row justify-content-center" role="group" >
         <form action="Dashboard.php" method="post">
-          <div class="input-group-prepend" id="button-addon3">
+          <div class="input-group-prepend btn-group" id="button-addon3">
             <button type="submit" class="btn btn-light switch-button border" name='switch' value="all">All Assets</button>
             <button type="submit" class="btn btn-light switch-button border" name="switch" value="overDue">Overdue Assets</button>
           </div>
         </form>
       </div>
 
-      <div class="input-group pr-4">
-        <input type="text" class="form-control test" placeholder="Search..." id="search-input">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search..." id="search-input">
         <select class="custom-select" id="inputGroupSelect04">
           <option selected value="serial">Serial</option>
           <option value="username">Username</option>

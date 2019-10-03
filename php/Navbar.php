@@ -14,7 +14,13 @@
         <a id="manage" class="nav-link active" href="./ManageAssets.php">Manage Assets</a>
       </li>
       <li class="nav-item">
+        <a id="settings" class="nav-link active" href="./Analytics.php">Analytics</a>
+      </li>
+      <li class="nav-item">
         <a id="settings" class="nav-link active" href="./Settings.php">Settings</a>
+      </li>
+      <li class="nav-item">
+        <a id="scanner" class="nav-link active" href="./Scanner.php">Scan Assets</a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" href="./Login.php">Sign Out</a>
