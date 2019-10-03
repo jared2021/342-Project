@@ -1,7 +1,8 @@
 <?php
-  $username = filter_input(INPUT_POST, 'username');
-  $password = filter_input(INPUT_POST, 'password');
-  if($password && $username){
+  session_start();
+  $_SESSION('username') = filter_input(INPUT_POST, 'username');
+  $_SESSION('password') = filter_input(INPUT_POST, 'password');
+  if($_SESSION('username') && $_SESSION('password')){
     header ("Location:../index.php") ;
   }
 ?>
@@ -15,7 +16,7 @@
     <link rel="stylesheet" href="../css/Login.css">
     <title>Login</title>
   </head>
-  <body
+  <body>
     <div class="container d-flex align-items-center justify-content-center" style="height:100vh; width: 100vw">
       <div class="jumbotron">
         <h1 class="text-center">Login</h1>
