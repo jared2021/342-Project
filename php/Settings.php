@@ -61,7 +61,7 @@
                     <form>
                         <div class="form-group mx-3 mt-3">
                             <label>Model Name</label>
-                            <input type="text" class="form-control" id="serial" placeholder="Name" value="<?php print $serial?>">
+                            <input type="text" class="form-control" id="serial" placeholder="Name">
                             <div class="form-row mt-3">
                                 <div class="col">
                                     <label>Manufacturer</label>
