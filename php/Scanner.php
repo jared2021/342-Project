@@ -4,27 +4,10 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <style media="screen">
-            video {
-                position: fixed;
-                z-index: -1;
-                right: 0;
-                bottom: 0;
-                min-width: 100%;
-                min-height: 100%;
-            }
-            div.controls {
-                position: fixed;
-                bottom: 0;
-                height: 10%;
-                width: 100%;
-                padding: 1%;
-                background-color: white;
-                text-align: center;
-            }
-        </style>
+
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/Scanner.css">
         <title>Scan Assets</title>
     </head>
     <body>
