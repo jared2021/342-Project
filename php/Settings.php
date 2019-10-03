@@ -15,12 +15,13 @@
   <body>
     <?php
         include 'Navbar.php';
+        session_start();
 	?>
 
     <div class="container cd-flex flex-column p-5 border bg-light mt-5 w-50">
         <h1>Account Info</h1>
         <hr>
-    	<h5>Username:</h5>
+    	<h5>Username: <?php echo $_SESSION['username'] ?></h5>
         <button type="button" name="ResetPW" class="btn btn-primary" data-toggle="modal" data-target="#passwordReset">Reset Password</button>
     	<h5>Check assets in:</h5>
         <div class="input-group mb-3">

@@ -1,8 +1,8 @@
 <?php
   session_start();
-  $_SESSION('username') = filter_input(INPUT_POST, 'username');
-  $_SESSION('password') = filter_input(INPUT_POST, 'password');
-  if($_SESSION('username') && $_SESSION('password')){
+  $_SESSION['username'] = filter_input(INPUT_POST, 'username');
+  $_SESSION['password'] = filter_input(INPUT_POST, 'password');
+  if($_SESSION['username'] && $_SESSION['password']){
     header ("Location:../index.php") ;
   }
 ?>
