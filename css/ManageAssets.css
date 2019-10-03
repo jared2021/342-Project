@@ -3,8 +3,30 @@ div.add-new-assets * {
 }
 
 div.deactivate-assets {
-    /* TODO: Add Deactivate Assets css here if necessary.
-    *  If similarly styled to Add New Assets let @swimauger know
-    */
     display: none;
+}
+
+.table-container {
+    height: 50rem;
+    overflow-y: scroll;
+}
+
+#search-input {
+    width: 10rem;
+}
+
+@media only screen and (min-width: 992px) {
+    #search-input {
+        width: 45rem;
+    }
+
+    .switch-button {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .table-container {
+        height: 35rem;
+        overflow-y: scroll;
+    }
 }
