@@ -7,3 +7,7 @@ function togglePage(page) {
         $('.deactivate-assets').hide();
     }
 }
+
+function deactivateAssetFunction(SerialNum){
+  document.getElementById('assetSerial').innerHTML = SerialNum;
+}

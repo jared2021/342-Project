@@ -11,10 +11,6 @@ div.deactivate-assets {
     overflow-y: scroll;
 }
 
-#search-input {
-    width: 10rem;
-}
-
 @media only screen and (min-width: 992px) {
     #search-input {
         width: 45rem;

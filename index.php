@@ -1,7 +1,7 @@
 <?php
-  $user = true;
+  session_start();
 
-  if($user) {
+  if(isset($_SESSION['uID'])){
     header('Location:./php/Dashboard.php');
   }else {
     header('Location:./php/Login.php');

@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #A60000;">
   <a id="dashboard1" class="navbar-brand" href="./Dashboard.php">Assets Manager</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

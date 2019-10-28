@@ -1,23 +1,21 @@
 <?php
-    $assets = array (
-      array("685MPD2", "Desktop" ,"Ardrey, Tameka","2124"),
-      array("2ZFLDW2", "Desktop" ,"Barrera, Javier","2127"),
-      array("2ZFKDW2", "Desktop" ,"Blackmon Sha'Kema","2127"),
-      array("2ZFPDW2", "Desktop" ,"Booker, Sharice","2127"),
-      array("2ZFNDW2", "Desktop" ,"Brown, Diondria","2127"),
-      array("7YBG9N2", "Laptop" ,"Carr, Kari","3108E"),
-      array("89QMLH2", "Laptop" ,"Cassity, Erin","3138"),
-      array("JXZZLH2", "Laptop" ,"Clemons, Ashley ","Mobile"),
-      array("dH3YYRQ2", "Desktop" ,"Coomer, Nickie","3141"),
-      array("7YCG9N2", "Laptop" ,"Cruz, Karina","3143"),
-      array("6TSZS32", "Laptop" ,"Etienne, Les","Mobile"),
-      array("7YBG9N2", "Laptop" ,"Carr, Kari","3108E"),
-      array("89QMLH2", "Laptop" ,"Cassity, Erin","3138"),
-      array("JXZZLH2", "Laptop" ,"Clemons, Ashley ","Mobile"),
-      array("dH3YYRQ2", "Desktop" ,"Coomer, Nickie","3141"),
-      array("7YCG9N2", "Laptop" ,"Cruz, Karina","3143"),
-      array("6TSZS32", "Laptop" ,"Etienne, Les","Mobile")
-    );
+  session_start();
+  if (!isset($_SESSION['uID'])){
+    header('Location:./Login.php');
+  }
+
+  require_once "dbConnect.php";
+
+  $allAssetSql = " SELECT AID, Faculty.FirstName, Faculty.LastName, Category.DeviceType , Manufacturer.ManName, Model.ModelName, SerialNum, Location.Building, Location.RoomNum, Network.NetworkName, PurchaseDate, WarrantyDate FROM Assets
+    INNER JOIN Category ON Assets.CatID = Category.CatID
+    INNER JOIN Manufacturer ON Assets.ManID = Manufacturer.ManID
+    INNER JOIN Model ON Assets.ModID = Model.ModID
+    INNER JOIN Faculty ON Assets.UserID = Faculty.FID
+    INNER JOIN Location ON Assets.LocID = Location.LID
+    INNER JOIN Network ON Assets.NetID = Network.NID
+    WHERE Active = 1;
+  ";
+  $allAssets = $DB->Execute($allAssetSql);
 ?>
 
 
@@ -32,7 +30,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/ManageAssets.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
     <title>Manage Assets</title>
+    <script>
+      $(document).ready(function() {
+        /// Creates table look
+        $('#deactivateAssetsTable').DataTable();
+      });
+    </script>
   </head>
   <body>
     <?php include './Navbar.php'?>
@@ -127,53 +134,50 @@
         </div>
 
         <div class="deactivate-assets mt-4">
-            <div class="container bg-light border">
-               <h1 class="pt-3">Deactivate Asset(s) </h1>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search..." id="search-input">
-                    <select class="custom-select" id="inputGroupSelect04">
-                        <option selected value="serial">Serial</option>
-                        <option value="username">Username</option>
-                        <option value="room">Room</option>
-                        <option value="days">Days Late</option>
-                        <option value="days">Type</option>
-                    </select>
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">Search</button>
-                    </div>
-                </div>
-                <div class="table-container">
-                    <table class="table table-sm border mt-3">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col" class='text-center'>#</th>
-                                <th scope="col" class='text-center'>Serial Number</th>
-                                <th scope="col" class='text-center'>Type</th>
-                                <th scope="col" class='text-center'>User</th>
-                                <th scope="col" class='text-center'>Room</th>
-                                <th scope='col' class='text-center'></th>
-                            </tr>
-                        </thead>
-
-                        <?php
-                            foreach ($assets as $arrayKey => $array) {
-                              print "<tr>";
-                              $index = $arrayKey + 1;
-                              print "<td class='text-center table-item'>$index</td>";
-                              foreach($array as $itemKey => $value){
-                                print "<td class='text-center table-item'>$value</td>";
-                              }
-                              print "<td><button type='button' class='btn btn-primary' onclick='saveIndexFunction($arrayKey)' data-toggle='modal' data-target='#deactivateAsset'>Deactivate</button></td>";
-                              print "</tr>";
-                            }
-                        ?>
-                    </table>
-                </div>
-            </div>
+          <div class="table-container allAssets">
+            <table id="deactivateAssetsTable" class="table table-hover table-sm border mt-2">
+              <thead class="thead-dark">
+                <tr id="all">
+                  <th scope="col" class='text-center'>First Name</th>
+                  <th scope="col" class='text-center'>Last Name</th>
+                  <th scope="col" class='text-center'>Device Type</th>
+                  <th scope="col" class='text-center'>Manufacturer</th>
+                  <th scope="col" class='text-center'>Model</th>
+                  <th scope="col" class='text-center'>Serial Number</th>
+                  <th scope="col" class='text-center'>Building</th>
+                  <th scope="col" class='text-center'>Room</th>
+                  <th scope="col" class='text-center'>Network</th>
+                  <th scope="col" class='text-center'>Purchase Date</th>
+                  <th scope="col" class='text-center'>Warranty Date</th>
+                  <th scope="col" class='text-center'></th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                  foreach ($allAssets as $asset) {
+                    print "<tr>
+                    <td class='text-center'>".$asset['FirstName']."</td>
+                    <td class='text-center'>".$asset['LastName']."</td>
+                    <td class='text-center'>".$asset['DeviceType']."</td>
+                    <td class='text-center'>".$asset['ManName']."</td>
+                    <td class='text-center'>".$asset['ModelName']."</td>
+                    <td class='text-center'>".$asset['SerialNum']."</td>
+                    <td class='text-center'>".$asset['Building']."</td>
+                    <td class='text-center'>".$asset['RoomNum']."</td>
+                    <td class='text-center'>".$asset['NetworkName']."</td>
+                    <td class='text-center'>".$asset['PurchaseDate']."</td>
+                    <td class='text-center'>".$asset['WarrantyDate']."</td>
+                    <td><button value = '".$asset['SerialNum']."' class='btn btn-danger' id='editButton' data-toggle='modal' data-target='#deactivateAsset' onclick='deactivateAssetFunction(this.value)'><img src='../Assets/x-mark-24.png' height='15' width='15'></button></td>
+                    </tr>";
+                  }
+                ?>
+              </tbody>
+            </table>
+          </div>
         </div>
     </div>
 
-    <!-- OverDue Modal -->
+    <!-- Deactivat Modal -->
     <div class="modal fade" id="deactivateAsset" tabindex="-1" role="dialog" aria-labelledby="overDueModal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -184,7 +188,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure you want to deactivate this asset?</p>
+                    <p>Are you sure you want to deactivate the asset with Serial Number <span id="assetSerial"></span>?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -196,7 +200,6 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="../js/ManageAssets.js"></script>

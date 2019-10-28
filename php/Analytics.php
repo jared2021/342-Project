@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['uID'])){
+  header('Location:./Login.php');
+}
+
 include "./Calendar.php";
 $devices = array(
   array("label"=>"Desktop", "y"=>8),

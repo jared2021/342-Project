@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if (!isset($_SESSION['uID'])){
+    header('Location:./Login.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
